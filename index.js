@@ -7,6 +7,8 @@ const Client = new irc.Client(config.server, config.botName, {
 })
 
 module.exports = robot => {
+  // There should be some guard here to ensure bot is connected
+  // and in proper channel etc.
   robot.on('issues.opened', opened.bind(null, Client))
   // add other events...
 }
