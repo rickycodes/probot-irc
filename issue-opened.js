@@ -1,7 +1,7 @@
 const { singular } = require('pluralize')
 const { bold } = require('irc-colors')
 const config = require('./config')
-const opened = (Client, {
+const opened = async (Client, {
   event,
   payload: {
     issue: { html_url, user: { login } },
