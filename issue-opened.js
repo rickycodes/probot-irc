@@ -1,5 +1,5 @@
 const { singular } = require('pluralize')
-const { bold } = require('irc-colors')
+const { lightgreen, bold } = require('irc-colors')
 const config = require('./config')
 const opened = async (Client, {
   event,
@@ -8,7 +8,7 @@ const opened = async (Client, {
     action
   }
 }) => {
-  const say = `@${bold(login)} ${action} an ${singular(event)}: ${html_url}`
+  const say = `${bold('@' + login)} ${lightgreen(action)} an ${singular(event)}: ${html_url}`
   config.channels.forEach(chan => {
     Client.say(chan, say)
   })
