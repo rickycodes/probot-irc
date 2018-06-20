@@ -2,10 +2,7 @@ const irc = require('irc')
 const { channels, server, botName } = require('./config')
 const issues = require('./issues')
 const pulls = require('./pulls')
-
-const client = new irc.Client(server, botName, {
-  channels
-})
+const client = new irc.Client(server, botName, { channels })
 
 const registered = bot => {
   bot.on(
