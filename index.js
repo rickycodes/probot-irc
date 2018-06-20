@@ -1,10 +1,10 @@
 const irc = require('irc')
-const config = require('./config')
+const { channels, server, botName } = require('./config')
 const issues = require('./issues')
 const pulls = require('./pulls')
 
-const client = new irc.Client(config.server, config.botName, {
-  channels: config.channels
+const client = new irc.Client(server, botName, {
+  channels
 })
 
 const registered = bot => {
@@ -19,5 +19,5 @@ const registered = bot => {
 }
 
 module.exports = bot => {
-  client.addListener('registered', _ => registered(bot))
+  client.addListener('registered', registered.bind(null, bot))
 }
