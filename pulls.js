@@ -12,6 +12,6 @@ module.exports = async (client, {
   const color = (action === 'closed') ? red : lightgreen
   const _action = bold(color(action))
   const _event = singular(event).replace('_', ' ')
-  const say = `${user} ${_action} a ${_event}: "${title}" ${html_url}`
+  const say = `${user} ${_action} a ${_event}: "${title}" ${html_url}` // eslint-disable-line
   Object.keys(client.chans).map(chan => client.say(chan, say))
 }
