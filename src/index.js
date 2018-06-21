@@ -4,7 +4,7 @@ const issues = require('./issues')
 const pulls = require('./pulls')
 const client = new irc.Client(server, botName, { channels })
 
-const registered = bot => {
+module.exports = bot => {
   bot.on(
     ['issues.opened', 'issues.closed', 'issues.reopened'],
     issues.bind(null, client)
@@ -13,8 +13,4 @@ const registered = bot => {
     ['pull_request.opened', 'pull_request.closed', 'pull_request.reopened'],
     pulls.bind(null, client)
   )
-}
-
-module.exports = bot => {
-  client.addListener('registered', registered.bind(null, bot))
 }
