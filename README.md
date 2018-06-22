@@ -1,6 +1,9 @@
 # probot-irc
 
-> A GitHub App built with [Probot](https://github.com/probot/probot) that creates a _very_ humble (super beta right now) irc bot that announces repo activity in a channel:
+[![build status](https://api.travis-ci.org/rickycodes/probot-irc.svg?branch=master)](https://travis-ci.org/rickycodes/probot-irc/)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
+> An example GitHub App built with [Probot](https://github.com/probot/probot) that creates a _very_ humble (super beta right now) IRC bot that announces repo activity in a channel:
 
 <img src='example.png' />
 
