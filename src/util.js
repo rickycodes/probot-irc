@@ -5,16 +5,16 @@ const colorize = action => {
   return color(action)
 }
 
-const aOrAn = str => /^[aeiou]/.test(str) ? 'an' : 'a'
+const aOrAnEvent = str => `${/^[aeiou]/.test(str) ? 'an' : 'a'} ${str}`
 
 const stripUnderscores = str => str.replace(/_/g, ' ')
 
-const getSayTemplate = (user, action, an, event, title, url) => (
-  `${user} ${action} ${an} ${event}: "${title}" ${url}` // eslint-disable-line
+const getSayTemplate = (user, action, anevent, title, url) => (
+  `${user} ${action} ${anevent}: "${title}" ${url}` // eslint-disable-line
 )
 
 module.exports = {
-  aOrAn,
+  aOrAnEvent,
   colorize,
   stripUnderscores,
   getSayTemplate,

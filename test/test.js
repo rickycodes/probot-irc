@@ -1,5 +1,5 @@
 const test = require('tape')
-const { colorize, stripUnderscores, aOrAn } = require('../src/util')
+const { colorize, stripUnderscores, aOrAnEvent } = require('../src/util')
 
 test('colorize', t => {
   t.plan(4)
@@ -15,9 +15,9 @@ test('stripUnderscores', t => {
   t.equal(stripUnderscores('this_should_also_work'), 'this should also work')
 })
 
-test('aOrAn', t => {
+test('aOrAnEvent', t => {
   t.plan(3)
-  t.equal(aOrAn('pull request'), 'a')
-  t.equal(`this is ${aOrAn('thing')} thing`, 'this is a thing')
-  t.equal(`this is ${aOrAn('item')} item`, 'this is an item')
+  t.equal(aOrAnEvent('pull request'), 'a pull request')
+  t.equal(`this is ${aOrAnEvent('thing')}`, 'this is a thing')
+  t.equal(`this is ${aOrAnEvent('item')}`, 'this is an item')
 })

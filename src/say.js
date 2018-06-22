@@ -1,5 +1,5 @@
 const { singular } = require('pluralize')
-const { aOrAn, colorize, bold, stripUnderscores, getSayTemplate } = require('./util')
+const { aOrAnEvent, colorize, bold, stripUnderscores, getSayTemplate } = require('./util')
 
 const say = (client, template) => (
   Object.keys(client.chans).map(chan => client.say(chan, template))
@@ -17,8 +17,7 @@ const handle = async (client, {
   const toSay = getSayTemplate(
     `${bold('@' + login)}`,
     bold(colorize(action)),
-    aOrAn(event),
-    stripUnderscores(singular(event)),
+    aOrAnEvent(stripUnderscores(singular(event))),
     title,
     html_url
   )
