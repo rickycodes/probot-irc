@@ -16,8 +16,7 @@
     "dev": "nodemon --exec \"npm start\"",
     "start": "probot run ./src/index.js",
     "lint": "standard --fix",
-    "test": "jest && standard",
-    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+    "test": "node test/test.js && standard"
   },
   "dependencies": {
     "irc": "^0.5.2",
@@ -26,17 +25,12 @@
     "probot": "^6.2.0"
   },
   "devDependencies": {
-    "jest": "^22.4.3",
     "nodemon": "^1.17.2",
     "smee-client": "^1.0.1",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "tape": "^4.9.1"
   },
   "engines": {
     "node": ">= 8.3.0"
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ]
   }
 }
