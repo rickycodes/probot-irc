@@ -1,8 +1,13 @@
 const test = require('tape')
-const { stripSlashes, aOrAn } = require('../src/util')
+const { stripUnderscores, aOrAn } = require('../src/util')
 
-test('utils', function (test) {
+test('stripUnderscores', test => {
+  test.plan(1)
+  test.equal(stripUnderscores('pull_request'), 'pull request')
+})
+
+test('aOrAn', test => {
   test.plan(2)
-  test.equal(stripSlashes('pull_request'), 'pull request')
   test.equal(aOrAn('pull request'), 'a')
+  test.equal(`this is ${aOrAn('thing')} thing`, 'this is a thing')
 })
