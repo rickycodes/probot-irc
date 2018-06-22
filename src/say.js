@@ -1,7 +1,11 @@
 const { singular } = require('pluralize')
 const { aOrAn, colorize, bold, stripSlashes, getSayTemplate } = require('./util')
 
-const say = async (client, {
+const say = (client, template) => (
+  Object.keys(client.chans).map(chan => client.say(chan, template))
+)
+
+const handle = async (client, {
   event,
   payload
 }) => {
@@ -19,7 +23,7 @@ const say = async (client, {
     html_url
   )
 
-  Object.keys(client.chans).map(chan => client.say(chan, toSay))
+  say(client, toSay)
 }
 
-module.exports = say
+module.exports = handle
