@@ -7,7 +7,7 @@ const colorize = action => {
 
 const aOrAn = str => /^[aeiou]/.test(str) ? 'an' : 'a'
 
-const stripSlashes = str => str.replace('_', ' ')
+const stripUnderscores = str => str.replace('_', ' ')
 
 const getSayTemplate = (user, action, an, event, title, url) => (
   `${user} ${action} ${an} ${event}: "${title}" ${url}` // eslint-disable-line
@@ -16,7 +16,7 @@ const getSayTemplate = (user, action, an, event, title, url) => (
 module.exports = {
   aOrAn,
   colorize,
-  stripSlashes,
+  stripUnderscores,
   getSayTemplate,
   bold
 }
