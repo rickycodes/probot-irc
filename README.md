@@ -1,4 +1,4 @@
-# probot-irc
+# :robot: probot-irc
 
 [![build status](https://api.travis-ci.org/rickycodes/probot-irc.svg?branch=master)](https://travis-ci.org/rickycodes/probot-irc/)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
