@@ -7,7 +7,7 @@ const colorize = action => {
 
 const aOrAn = str => /^[aeiou]/.test(str) ? 'an' : 'a'
 
-const stripUnderscores = str => str.replace('_', ' ')
+const stripUnderscores = str => str.replace(/_/g, ' ')
 
 const getSayTemplate = (user, action, an, event, title, url) => (
   `${user} ${action} ${an} ${event}: "${title}" ${url}` // eslint-disable-line
